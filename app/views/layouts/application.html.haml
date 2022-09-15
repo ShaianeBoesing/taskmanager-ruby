@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ArtiaChallenge
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    = favicon_link_tag "https://yt3.ggpht.com/ytc/AMLnZu8msDG162_c_QMMhMlMrBIijy3l2Me0rt1XgQxwjQ=s900-c-k-c0x00ffffff-no-rj" 
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+  %body
+    = render "layouts/navbar"
+    - if notice 
+      .alert.alert-success.text-center
+        =notice
+    .container
+      = yield
+      %div

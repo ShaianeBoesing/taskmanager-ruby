@@ -1,0 +1,21 @@
+= form_with(model: project) do |form|
+  - if project.errors.any?
+    %div{:style => "color: red"}
+      %ul
+        - project.errors.each do |error|
+          %li= error.full_message
+  .form-group.d-flex
+    = form.label :name
+    = form.text_field :name, class: "form-control"
+  .form-group.d-flex
+    .row
+      .col-md-6
+        = form.label :init
+        = form.date_field :init, class: "form-control"
+      .col-md-6
+        = form.label :end
+        = form.date_field :end, class: "form-control"
+  .form-group
+    = form.submit "Save", class: "btn btn-primary"
+    = link_to "Back", projects_path, class: "btn btn-default"
+

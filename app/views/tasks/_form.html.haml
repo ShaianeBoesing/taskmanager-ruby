@@ -1,0 +1,24 @@
+= form_with(model: task) do |form|
+  - if task.errors.any?
+    %div{:style => "color: red"}
+      %ul
+        - task.errors.each do |error|
+          %li= error.full_message
+  .form-group
+    = form.label :name, style: "display: block"
+    = form.text_field :name, class: "form-control"
+  .form-group
+    = form.label :init, style: "display: block"
+    = form.date_field :init, class: "form-control"
+  .form-group
+    = form.label :end, style: "display: block"
+    = form.date_field :end, class: "form-control"
+  .form-group
+    = form.label :status, style: "display: block"
+    = form.check_box :status, class: "form-check-input"
+  .form-group
+    = form.label :project, style: "display: block"
+    = form.collection_select :project_id, @projects, :id, :name, { class: 'form-control' }
+  .form-group
+    = form.submit "Save", class: "btn btn-primary"
+    = link_to "Back", :back, class: "btn btn-default"

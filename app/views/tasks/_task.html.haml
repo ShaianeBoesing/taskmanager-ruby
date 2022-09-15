@@ -1,0 +1,36 @@
+- if @tasks.empty?
+  .alert.alert-warning No tasks found
+- else
+  .table-responsive
+    %table.table
+      %thead
+        %tr
+          %th 
+            Name
+          %th 
+            Init
+          %th
+            End  
+          %th
+            Projeto  
+          %th
+            Status  
+          %th{:colspan => 2}
+            Actions  
+      %tbody
+      - @tasks.asc.each do |task|
+        %tr 
+          %td 
+            = task.name 
+          %td 
+            = date_br(task.init)
+          %td
+            = date_br(task.end)
+          %td
+            = link_to "#{task.project.name}", search_tasks_path(:project_id => task.project_id), class: "text-decoration-none"
+          %td
+            = check_box_tag "status", task.id, task.status
+          %td.actions
+            = link_to "Edit", edit_task_path(task), method: :get, class: "btn btn-sm btn-primary"
+          %td.actions
+            = button_to "Delete", task, method: :delete, class: "btn btn-sm btn-danger no-wrap"
