@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+gem 'kaminari'
+
 gem 'data-confirm-modal'
 
 gem 'rails-i18n', '~> 7.0.0'
