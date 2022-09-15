@@ -28,4 +28,5 @@
             = link_to "See Tasks", search_tasks_path(:project_id => project.id), class: "btn btn-sm btn-warning"
           %td.actions
             = button_to "Delete", project, method: :delete,  data: {confirm: 'Are you sure?'}, class: "btn btn-sm btn-danger"
-
+  = paginate @projects, class: "ppp"
+  
