@@ -72,3 +72,29 @@ select:focus {
     width: 50px !important;
     float: left;
 }
+
+.pagination {
+    background-color:  #daa4;
+    width: fit-content;
+    float: right;
+    text-align: right;
+    padding: 2vh 0;
+    color: #d44;
+    border-radius: 10px;
+}
+
+.page, 
+.first, 
+.prev, 
+.next, 
+.last {
+    padding: 10px;
+}
+
+.page > a,
+.first > a,
+.prev > a,
+.next > a,
+.last > a {
+    color: #f7a;
+}
