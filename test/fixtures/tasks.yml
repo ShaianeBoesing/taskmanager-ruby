@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  init: 2022-09-09
+  end: 2022-09-09
+  status: false
+
+two:
+  name: MyString
+  init: 2022-09-09
+  end: 2022-09-09
+  status: false
