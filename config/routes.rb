@@ -2,11 +2,14 @@ Rails.application.routes.draw do
   
   root to: "projects#index"
   
-  resources :projects
+  resources :projects do
+    get '/page/:page', action: :index, on: :collection
+  end
   
-  resources :tasks
-  
-  get "/search/tasks", to: "tasks#search"
+  resources :tasks do 
+    get '/search/:project_id', action: :search, on: :collection, as: :search
+    get '/page/:page', action: :index, on: :collection
+  end
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
