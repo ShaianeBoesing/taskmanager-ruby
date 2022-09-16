@@ -18,7 +18,7 @@
           %th{:colspan => 2}
             Actions  
       %tbody
-      - @tasks.asc.each do |task|
+      - @tasks.each do |task|
         %tr 
           %td 
             = task.name 
@@ -34,3 +34,4 @@
             = link_to "Edit", edit_task_path(task), method: :get, class: "btn btn-sm btn-primary"
           %td.actions
             = button_to "Delete", task, method: :delete, class: "btn btn-sm btn-danger no-wrap"
+  = paginate @tasks
