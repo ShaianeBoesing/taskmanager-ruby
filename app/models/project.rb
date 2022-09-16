@@ -6,7 +6,9 @@ class Project < ApplicationRecord
     validate :new_init_is_valid, on: :update
     validate :tasks_arent_out_project_period, on: :update
 
-    scope :asc, -> { order(init: :asc) }   
+    scope :asc, -> { order(name: :asc) }   
+    scope :order_by_end_soon, -> { order(end: :asc) }
+    scope :order_by_init_soon, -> { order(init: :asc) }
 
 
     def end_is_valid

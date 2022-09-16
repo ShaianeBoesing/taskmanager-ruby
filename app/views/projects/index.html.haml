@@ -1,3 +1,9 @@
 %h1 Projects
-= link_to "New project", new_project_path
+.row
+    .col-md-9
+        = link_to "New project", new_project_path
+    .col-md-3 
+        = form_tag(projects_path, :method => :get) do
+            = select_tag :filter,options_for_select(@filters, @filter),  prompt: 'All', class: "form-control", onchange: 'this.form.submit()' 
+
 = render "project"

@@ -1,9 +1,10 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[ show edit update destroy ]
+  before_action :project_params, only: %i[ create update ]
+  before_action :set_filter, only: %i[ index ]
 
   # GET /projects or /projects.json
   def index
-    @projects = Project.page(params[:page]).per(10).asc
   end
 
   # GET /projects/1 or /projects/1.json
@@ -66,6 +67,16 @@ class ProjectsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def project_params
       params.require(:project).permit(:name, :init, :end)
+    end
+
+    def set_filter
+      @filters = [
+                  ["Starts soon", :init], 
+                  ["Ends soon", :end]
+                ]
+
+      @filter = params[:filter]
+      @projects = helpers.filter_projects(@filter)
     end
 
   end
