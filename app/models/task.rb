@@ -2,7 +2,8 @@ class Task < ApplicationRecord
     belongs_to :project
     validates_presence_of :name, :init, :end, :project_id
     validate :end_is_valid
-    validate :init_is_valid
+    validate :init_is_valid, on: :create
+    validate :new_init_is_valid, on: :update
 
     scope :asc, -> { order("tasks.init ASC") }
     scope :filter_by_project, -> (project) { where project_id: project }
@@ -25,5 +26,12 @@ class Task < ApplicationRecord
         end
     end
 
+    def new_init_is_valid
+        if self.init && self.end
+            if self.changed
+                errors.add(:init, "can't be earlier than last reported date") unless self.init_was <= self.init
+            end
+        end
+    end
 
 end
