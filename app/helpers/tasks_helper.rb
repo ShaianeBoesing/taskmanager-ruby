@@ -12,5 +12,8 @@ module TasksHelper
         else
             @tasks = Task.all
         end
+            
+        return @tasks.page(params[:page]).per(10).asc
     end
+    
 end
