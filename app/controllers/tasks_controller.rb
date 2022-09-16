@@ -90,7 +90,7 @@ class TasksController < ApplicationController
                 ]
 
       @filter = params[:filter]
-      @tasks = helpers.filter_helper(@filter)
+      @tasks = helpers.filter_tasks(@filter)
             
     end
   end

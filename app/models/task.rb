@@ -5,7 +5,7 @@ class Task < ApplicationRecord
     validate :init_is_valid, on: :create
     validate :new_init_is_valid, on: :update
 
-    scope :asc, -> { order("tasks.init ASC") }
+    scope :asc, -> { order(name: :asc) }
     scope :filter_by_project, -> (project) { where project_id: project }
     scope :filter_by_status_on, -> { where status: true }
     scope :filter_by_status_off, -> { where status: false }

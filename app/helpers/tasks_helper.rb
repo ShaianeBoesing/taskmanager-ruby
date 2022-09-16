@@ -1,5 +1,5 @@
 module TasksHelper
-    def filter_helper(filter_type)
+    def filter_tasks(filter_type)
         case filter_type
         when "end"
             @tasks = Task.order_by_end_soon
