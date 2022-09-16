@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects or /projects.json
   def index
-    @projects = Project.page(params[:page]).per(10)
+    @projects = Project.page(params[:page]).per(10).asc
   end
 
   # GET /projects/1 or /projects/1.json
