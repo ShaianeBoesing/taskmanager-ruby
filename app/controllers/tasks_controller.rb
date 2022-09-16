@@ -6,8 +6,6 @@ class TasksController < ApplicationController
 
   # GET /tasks or /tasks.json
   def index
-    @filter = params[:filter]
-    @tasks = helpers.filter_helper(@filter)
   end
 
   # GET /tasks/1 or /tasks/1.json
@@ -61,7 +59,7 @@ class TasksController < ApplicationController
   def search
     project_id = params[:project_id]
     @project = Project.find(project_id)
-    @tasks = Task.filter_by_project(project_id)
+    @tasks = @tasks.filter_by_project(project_id)
   end
 
   private
@@ -90,5 +88,9 @@ class TasksController < ApplicationController
                   ["Starts soon", :init], 
                   ["Ends soon", :end]
                 ]
+
+      @filter = params[:filter]
+      @tasks = helpers.filter_helper(@filter)
+            
     end
   end
