@@ -23,10 +23,12 @@ class Project < ApplicationRecord
         end
     end
 
+    # Allows you to update the init to a date greater than the old one 
+    # OR update the init to an earlier date than the old one as long as the new (and old) date is in the future
     def new_init_is_valid
         if self.init && self.end
             if self.changed
-                errors.add(:init, "can't be earlier than last reported date") unless self.init_was <= self.init
+                errors.add(:init, "can't be earlier than last reported date") unless self.init_was <= self.init || self.init >= Date.current
             end
         end
     end
