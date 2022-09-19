@@ -8,6 +8,7 @@
 ### Para rodar o projeto em sua máquina, você deve ter instalado:
 - Ruby 3.1.2
 - Rails 7.0.4
+- MySQL 8.0.3
 
 #### Na pasta raiz do projeto:
 - bundle install
