@@ -1,24 +1,22 @@
-# README
+# TASKMANAGER - GERENCIADOR DE TAREFAS
+#### Sistema para criar e gerenciar projetos
+#### Tecnologias utilizadas
+- RUBY ON RAILS
+- MYSQL
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+### Para rodar o projeto em sua máquina, você deve ter instalado:
+- Ruby 3.1.2
+- Rails 7.0.4
 
-* Ruby version
+#### Na pasta raiz do projeto:
+- bundle install
+- rails server
 
-* System dependencies
+### Acesse a porta aberta http://localhost:3000
 
-* Configuration
+## Autora:
 
-* Database creation
+- [@ShaianeBoesing](https://github.com/ShaianeBoesing)
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
