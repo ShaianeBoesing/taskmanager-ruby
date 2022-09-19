@@ -1,4 +1,4 @@
-# TASKMANAGER - GERENCIADOR DE TAREFAS
+# TASKMANAGER - GERENCIADOR DE TAREFAS EM RUBY
 #### Sistema para criar e gerenciar projetos
 #### Tecnologias utilizadas
 - RUBY ON RAILS
