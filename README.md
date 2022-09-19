@@ -11,6 +11,8 @@
 
 #### Na pasta raiz do projeto:
 - bundle install
+- rails db:create
+- rails db:migrate
 - rails server
 
 ### Acesse a porta aberta http://localhost:3000
