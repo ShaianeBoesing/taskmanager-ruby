@@ -10,6 +10,7 @@
 - Rails 7.0.4
 - MySQL 8.0.3
 
+#### em ./config/database.yml altere as configurações default de acesso ao seu servidor local de mysql
 #### Na pasta raiz do projeto:
 - bundle install
 - rails db:create
